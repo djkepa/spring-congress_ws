@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link href="https://fonts.googleapis.com/css?family=Aleo&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/main.css">
+
+  <script src="https://kit.fontawesome.com/9c9172b589.js" crossorigin="anonymous"></script>
+  <script src="js/darkmode.js"></script>
+
+  <title>EESTEC Congress</title>
+</head>
+<body>
+   <div class="navigation">
+    <input type="checkbox" class="navigation__checkbox" id="navi-toggle">
+    <label for="navi-toggle" class="navigation__button">
+        <span class="navigation__icon">&nbsp;</span>
+    </label>
+    <div class="navigation__background">&nbsp;</div>
+    <nav class="navigation__nav">
+        <ul class="navigation__list">
+            <li class="navigation__item"><a href="#" class="navigation__link">About Eestec</a></li>
+            <li class="navigation__item"><a href="#" class="navigation__link">About Congress</a></li>
+            <li class="navigation__item"><a href="#" class="navigation__link">Open Day</a></li>
+            <li class="navigation__item"><a href="#" class="navigation__link">Sponsors</a></li>
+            <li class="navigation__item"><a href="#" class="navigation__link">Schedules</a></li>
+            <li class="navigation__item"><a href="#" class="navigation__link">Organizers</a></li>
+            <li class="navigation__item"><a href="#" class="navigation__link">Contact</a></li>
+        </ul>
+    </nav>
+</div>  
+<header class="header">
+  <div class="header__logo-box">
+      <img src="images/elogo.png" alt="Logo" class="header__logo">
+  </div>
+  <div class="social__link-group">
+    <div class="container" data-state="day">
+      <div class="toggle--wrapper" onclick="darklight()">
+        <div class="toggle--knob" ></div>
+      </div>
+    </div>
+  </div>
+<div class="bg__animation"></div>
+<div class="header__text-box" id="ide">
+    <div class="header__logo-middle">
+    </div>
+    <h1 class="heading-primary"> 
+    <span class="heading-primary--main">Spring Congress</span>
+    <span class="heading-primary--sub">Novi Sad 2020</span> 
+   </h1>    
+</div>
+<p id="demo" hidden></p>
+  <div class="header__bottom">
+    <div>
+      <div class="chart__main">
+        <div class="chart">
+          <div class="chart__number" id="tdays"></div>
+          <div class="chart__text">Days</div>
+        </div>
+        <div class="chart">
+          <div class="chart__number" id="thours"></div>
+          <div class="chart__text">Hours</div>
+        </div>
+        <div class="chart">
+          <div class="chart__number" id="tminutes"></div>
+          <div class="chart__text">Minutes</div>
+        </div>
+        <div class="chart">
+          <div class="chart__number" id="tseconds"></div>
+          <div class="chart__text">Seconds</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="social__link_group_org">
+    <a href="#"><i class="fab fa-facebook-square fa-4x icons_social"></i></a>
+    <a href="#"><i class="fab fa-instagram fa-4x icons_social-2"></i></a>
+  </div>
+</header>
+<script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
+</body>
+<!-- <script src="//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/plugins/debug.addIndicators.min.js"></script>
+<script src="js/menu.js"></script> -->
+
+<script type="text/javascript">
+ console.clear();
+const elToggle = document.querySelector('.toggle--wrapper');
+const elApp = document.querySelector('.container');
+
+const machine = {
+  initial: elApp.dataset.state,//'day',
+  states: {
+    day: {
+      on: {
+        TOGGLE: 'night'
+      }
+    },
+    night: {
+      on: {
+        TOGGLE: 'day'
+      }
+    },
+  }
+};
+
+elToggle.addEventListener('click', (e) => {
+  const currentState = elApp.dataset.state;
+  const nextState = machine.states[currentState].on.TOGGLE;
+  toggleState(nextState);
+})
+
+const toggleState = (state) => {
+  elApp.dataset.state = state;
+}
+
+</script>
+<script src="js/timer.js"></script>
+</html>

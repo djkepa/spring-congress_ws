@@ -1,0 +1,31 @@
+@import "anims";
+@import "animate/animate";
+
+@mixin delay($number, $value) {
+    -webkit-animation-delay: #{$number*$value};
+    -moz-animation-delay: #{$number*$value};
+    -o-animation-delay: #{$number*$value};
+    animation-delay: #{$number*$value};
+}
+
+.element {
+    $step: 0.4s;
+    &0 {
+        @include delay(0, $step);
+    }
+    &1 {
+        @include delay(1, $step);
+    }
+    &2 {
+        @include delay(2, $step);
+    }
+    &3 {
+        @include delay(3, $step);
+    }
+    &4 {
+        @include delay(4, $step);
+    }
+    &5 {
+        @include delay(5, $step);
+    }
+}
